@@ -30,7 +30,6 @@ import {
   Linkedin,
   LogOut,
 } from "lucide-react";
-import svgPaths from "./imports/svg-8a00bw8v4j";
 import imgHero from "figma:asset/3c2abb4def45421f03f9f83eab7d26ac0b483f2a.png";
 import imgAI from "figma:asset/6c5f51ddfae13998030379734020423a05cf8ed3.png";
 import imgTemplates from "figma:asset/b00afdc47c22bac73556c0db6c34f7997b38b012.png";
@@ -284,21 +283,11 @@ export default function App() {
               className="flex items-center gap-3"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="w-4 h-4">
-                <svg
-                  className="block size-full"
-                  fill="none"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 14 14"
-                >
-                  <path
-                    clipRule="evenodd"
-                    d={svgPaths.p2886ad00}
-                    fill="white"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
+              <img
+                src="/image/logo.jpg"
+                alt="LeadWise Logo"
+                className="h-8 w-8 rounded-md"
+              />
               <span className="text-lg font-bold">LeadWise Foundation</span>
             </motion.div>
 
@@ -1020,11 +1009,11 @@ export default function App() {
           <div className="flex gap-2">
             <Button
               size="sm"
-              className="flex-1 bg-[#7047eb] hover:bg-[#5f39d4] text-white"
-            >
+              className="flex-1 bg-[#7047eb] hover:bg-[#5f39d4] text-white rounded-xl"
+              onClick={handleCreateResumeClick}
+              >
               Get Started
             </Button>
-            <Button
               size="sm"
               variant="outline"
               className="border-[#2e2938] text-[#a39eb8] hover:text-white"
