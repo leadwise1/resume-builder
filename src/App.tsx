@@ -440,7 +440,10 @@ export default function App() {
                 <div className="flex gap-2 mt-4">
                   {user ? (
                     <>
-                      <Button className="flex-1 bg-[#7047eb] hover:bg-[#5f39d4] text-white rounded-xl">
+                       <Button
+                        className="flex-1 bg-[#7047eb] hover:bg-[#5f39d4] text-white rounded-xl"
+                        onClick={handleCreateResumeClick}
+                      >
                         Create Resume
                       </Button>
                       <Button
