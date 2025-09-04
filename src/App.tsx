@@ -1,15 +1,9 @@
 import { useState, useEffect } from "react";
-import { motion } from "motion/react";
 import { Button } from "./components/ui/button";
-import { Card, CardContent } from "./components/ui/card";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "./components/ui/collapsible";
+import { motion, } from "framer-motion";
 import { Badge } from "./components/ui/badge";
 import { AuthModal } from "./components/auth/AuthModal";
-import { useAuth, api, User } from "./utils/supabase/client";
+import { useAuth, api, User } from "./utils/supabase/auth";
 import {
   ChevronDown,
   ChevronUp,
@@ -29,7 +23,12 @@ import {
   Twitter,
   Linkedin,
   LogOut,
-} from "lucide-react";
+  Github,
+} 
+from "lucide-react";
+import { Card, CardContent } from "./components/ui/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./components/ui/collapsible";
+from "lucide-react";
 import imgHero from "figma:asset/3c2abb4def45421f03f9f83eab7d26ac0b483f2a.png";
 import imgAI from "figma:asset/6c5f51ddfae13998030379734020423a05cf8ed3.png";
 import imgTemplates from "figma:asset/b00afdc47c22bac73556c0db6c34f7997b38b012.png";
@@ -49,7 +48,7 @@ interface NavItem {
 interface Feature {
   title: string;
   description: string;
-  image: string;
+  image: string; // This is a Figma asset URL
 }
 
 interface Template {
