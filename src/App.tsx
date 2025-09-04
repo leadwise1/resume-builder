@@ -326,7 +326,10 @@ export default function App() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button className="bg-[#7047eb] hover:bg-[#5f39d4] text-white rounded-xl px-4 py-2">
+                    <Button
+                      className="bg-[#7047eb] hover:bg-[#5f39d4] text-white rounded-xl px-4 py-2"
+                      onClick={handleCreateResumeClick}
+                    >
                       Create Resume
                     </Button>
                   </motion.div>
