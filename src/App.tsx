@@ -1011,12 +1011,13 @@ export default function App() {
               size="sm"
               className="flex-1 bg-[#7047eb] hover:bg-[#5f39d4] text-white rounded-xl"
               onClick={handleCreateResumeClick}
-              >
+            >
               Get Started
             </Button>
+            <Button
               size="sm"
               variant="outline"
-              className="border-[#2e2938] text-[#a39eb8] hover:text-white"
+              className="border-[#2e2938] text-[#a39eb8] hover:text-white rounded-xl"
             >
               Learn More
             </Button>
