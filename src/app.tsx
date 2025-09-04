@@ -154,7 +154,7 @@ export default function App() {
       date: "2023-08-15",
       rating: 5,
       comment:
-        "Resume Matchmaker transformed my job search! The AI-powered resume builder helped me create a standout resume that landed me multiple interviews. Highly recommend!",
+        "LeadWise transformed my job search! The AI-powered resume builder helped me create a standout resume that landed me multiple interviews. Highly recommend!",
       likes: 12,
       dislikes: 1,
     },
@@ -163,7 +163,7 @@ export default function App() {
       date: "2023-09-22",
       rating: 5,
       comment:
-        "I was struggling to articulate my skills effectively until I used Resume Matchmaker. The interactive templates and AI suggestions were incredibly helpful.",
+        "I was struggling to articulate my skills effectively until I used LeadWise. The interactive templates and AI suggestions were incredibly helpful.",
       likes: 15,
       dislikes: 0,
     },
@@ -172,7 +172,7 @@ export default function App() {
       date: "2023-10-10",
       rating: 5,
       comment:
-        "Thanks to Resume Matchmaker, I found my dream job in just a few weeks. The job matching algorithm is spot-on, and the resume feedback was invaluable.",
+        "Thanks to LeadWise, I found my dream job in just a few weeks. The job matching algorithm is spot-on, and the resume feedback was invaluable.",
       likes: 10,
       dislikes: 2,
     },
@@ -299,9 +299,7 @@ export default function App() {
                   />
                 </svg>
               </div>
-              <span className="text-lg font-bold">
-                Resume Matchmaker
-              </span>
+              <span className="text-lg font-bold">LeadWise Foundation</span>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -547,7 +545,7 @@ export default function App() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How Resume Matchmaker Works
+              How LeadWise Works
             </h2>
           </motion.div>
 
@@ -974,7 +972,7 @@ export default function App() {
 
           <div className="text-center text-[#a39eb8]">
             <p>
-              © {new Date().getFullYear()} Resume Matchmaker. All rights reserved.
+              © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
             </p>
           </div>
         </div>
