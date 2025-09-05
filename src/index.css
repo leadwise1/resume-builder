@@ -1,0 +1,25 @@
+/* 1️⃣ Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2️⃣ CSS variables for light/dark mode */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #1b1b43;
+  --primary-foreground: #ffffff;
+}
+
+.dark {
+  --background: #101734;
+  --foreground: #fefff5;
+  --primary: #10152e;
+  --primary-foreground: #fffdee;
+}
+
+/* 3️⃣/* Solid color animation removed */
+
+.bg-animated {
+  background-color: #1b1b43; /* static solid color */
+}
