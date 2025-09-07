@@ -1,84 +1,130 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
 
-@custom-variant dark (&:is(.dark *));
+/* Custom font imports (if using Geist fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Custom variant for dark mode - fixed syntax */
+@variant dark (&:is(.dark *));
+
+/* CSS Custom Properties for theming */
 :root {
-  /* Updated to new professional color theme with Deep Navy, Emerald Green, and Soft Blue */
-  --background: #ffffff;
-  --foreground: #1e293b;
-  --card: #f8fafc;
-  --card-foreground: #1e293b;
-  --popover: #ffffff;
-  --popover-foreground: #1e293b;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
-  --secondary: #3b82f6;
-  --secondary-foreground: #ffffff;
-  --muted: #f1f5f9;
-  --muted-foreground: #6b7280;
-  --accent: #1e293b;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #f8fafc;
-  --ring: rgba(16, 185, 129, 0.3);
-  --chart-1: #10b981;
-  --chart-2: #3b82f6;
-  --chart-3: #1e293b;
-  --chart-4: #6b7280;
-  --chart-5: #f1f5f9;
-  --radius: 0.5rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #1e293b;
-  --sidebar-primary: #f8fafc;
-  --sidebar-primary-foreground: #1e293b;
-  --sidebar-accent: #10b981;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: rgba(16, 185, 129, 0.3);
+  /* Core colors - Enhanced with better contrast */
+  --background: oklch(98% 0.002 279.984);
+  --foreground: oklch(15% 0 0);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(15% 0 0);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(15% 0 0);
+  
+  /* Primary colors - Modern blue */
+  --primary: oklch(47% 0.15 264);
+  --primary-foreground: oklch(98% 0 0);
+  
+  /* Secondary colors */
+  --secondary: oklch(96% 0.005 279);
+  --secondary-foreground: oklch(20% 0 0);
+  
+  /* Muted colors */
+  --muted: oklch(96% 0.005 279);
+  --muted-foreground: oklch(55% 0.01 279);
+  
+  /* Accent colors */
+  --accent: oklch(96% 0.005 279);
+  --accent-foreground: oklch(20% 0 0);
+  
+  /* Destructive colors - Refined red */
+  --destructive: oklch(94.925% 0.05086 171.698);
+  --destructive-foreground: oklch(98% 0 0);
+  
+  /* Border and input */
+  --border: oklch(89% 0.005 279);
+  --input: oklch(89% 0.005 279);
+  --ring: oklch(47% 0.15 264);
+  
+  /* Chart colors - Professional palette */
+  --chart-1: oklch(40.966% 0.09235 159.659);
+  --chart-2: oklch(29.105% 0.10837 274.641);
+  --chart-3: oklch(96.712% 0.04173 176.16);
+  --chart-4: oklch(89.806% 0.09367 170.141);
+  --chart-5: oklch(70% 0.12 150);
+  
+  /* Border radius */
+  --radius: 0.75rem;
+  
+  /* Sidebar colors */
+  --sidebar: oklch(98% 0.002 279);
+  --sidebar-foreground: oklch(25% 0.02 279);
+  --sidebar-primary: oklch(47% 0.15 264);
+  --sidebar-primary-foreground: oklch(98% 0 0);
+  --sidebar-accent: oklch(95% 0.01 279);
+  --sidebar-accent-foreground: oklch(25% 0.02 279);
+  --sidebar-border: oklch(89% 0.005 279);
+  --sidebar-ring: oklch(47% 0.15 264);
+  
+  /* Animation variables */
+  --animation-duration: 0.3s;
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark mode theme - Enhanced contrast and modern colors */
 .dark {
-  /* Updated dark mode with navy background and emerald accents */
-  --background: #befbeb;
-  --foreground: #f8fafc;
-  --card: #b7f5ef;
-  --card-foreground: #f8fafc;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
-  --secondary: #3b82f6;
-  --secondary-foreground: #ffffff;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: #10b981;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #334155;
-  --input: #1e293b;
-  --ring: rgba(16, 185, 129, 0.3);
-  --chart-1: #10b981;
-  --chart-2: #3b82f6;
-  --chart-3: #f8fafc;
-  --chart-4: #94a3b8;
-  --chart-5: #334155;
-  --sidebar: #0f172a;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #1e293b;
-  --sidebar-primary-foreground: #f8fafc;
-  --sidebar-accent: #10b981;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #334155;
-  --sidebar-ring: rgba(16, 185, 129, 0.3);
+  --background: oklch(9% 0.01 279);
+  --foreground: oklch(98% 0.002 279);
+  --card: oklch(12% 0.015 279);
+  --card-foreground: oklch(98% 0.002 279);
+  --popover: oklch(12% 0.015 279);
+  --popover-foreground: oklch(98% 0.002 279);
+  
+  /* Primary - Brighter blue for dark mode */
+  --primary: oklch(68% 0.18 264);
+  --primary-foreground: oklch(12% 0.015 279);
+  
+  /* Secondary */
+  --secondary: oklch(18% 0.02 279);
+  --secondary-foreground: oklch(95% 0.005 279);
+  
+  /* Muted */
+  --muted: oklch(18% 0.02 279);
+  --muted-foreground: oklch(65% 0.015 279);
+  
+  /* Accent */
+  --accent: oklch(22% 0.025 279);
+  --accent-foreground: oklch(95% 0.005 279);
+  
+  /* Destructive - Softer red for dark mode */
+  --destructive: oklch(46.348% 0.13846 145.875);
+  --destructive-foreground: oklch(98% 0.002 279);
+  
+  /* Border and input */
+  --border: oklch(22% 0.025 279);
+  --input: oklch(22% 0.025 279);
+  --ring: oklch(68% 0.18 264);
+  
+  /* Chart colors - Dark mode optimized */
+  --chart-1: oklch(68% 0.18 264);
+  --chart-2: oklch(75% 0.12 190);
+  --chart-3: oklch(43.633% 0.09738 149.855);
+  --chart-4: oklch(70% 0.16 300);
+  --chart-5: oklch(73% 0.10 150);
+  
+  /* Sidebar - Dark theme */
+  --sidebar: oklch(12% 0.015 279);
+  --sidebar-foreground: oklch(90% 0.01 279);
+  --sidebar-primary: oklch(68% 0.18 264);
+  --sidebar-primary-foreground: oklch(12% 0.015 279);
+  --sidebar-accent: oklch(18% 0.02 279);
+  --sidebar-accent-foreground: oklch(90% 0.01 279);
+  --sidebar-border: oklch(22% 0.025 279);
+  --sidebar-ring: oklch(68% 0.18 264);
 }
 
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Theme configuration for Tailwind CSS v4 */
+@theme {
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+  
+  /* Colors mapped from CSS custom properties */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -98,15 +144,22 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  
+  /* Chart colors */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  
+  /* Border radius values */
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-2xl: calc(var(--radius) + 0.5rem);
+  
+  /* Sidebar colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -115,19 +168,169 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Animation configuration */
+  --animate-duration-fast: 150ms;
+  --animate-duration-normal: var(--animation-duration);
+  --animate-duration-slow: 500ms;
+  --animate-timing-function: var(--animation-timing);
 }
 
+/* Base styles with enhanced global settings */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  /* Removed automatic body background to allow custom backgrounds */
-  body {
-    @apply text-foreground;
+  
+  html {
+    @apply scroll-smooth antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
+  
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Enhanced focus styles */
+  :focus-visible {
+    @apply outline-2 outline-ring outline-offset-2;
+  }
+  
+  /* Smooth transitions for theme switching */
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing);
+  }
+}
 
-  /* Added specific class for pages that need default background */
-  .default-bg {
-    @apply bg-background;
+/* Custom utilities */
+@layer utilities {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-lg border border-white/10;
+  }
+  
+  /* Enhanced shadow utilities */
+  .shadow-glow {
+    box-shadow: 0 0 20px -5px theme(colors.primary / 0.3);
+  }
+  
+  .shadow-glow-lg {
+    box-shadow: 0 0 40px -10px theme(colors.primary / 0.4);
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent;
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn var(--animation-duration) var(--animation-timing) both;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp var(--animation-duration) var(--animation-timing) both;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn var(--animation-duration) var(--animation-timing) both;
+  }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Resume builder specific enhancements */
+@layer components {
+  /* Card enhancements */
+  .resume-card {
+    @apply bg-card text-card-foreground rounded-lg border shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  .resume-card:hover {
+    @apply shadow-glow border-primary/20;
+  }
+  
+  /* Form enhancements */
+  .form-section {
+    @apply space-y-6 p-6 bg-card rounded-lg border animate-fade-in;
+  }
+  
+  /* Button enhancements */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 active:scale-95 transition-all duration-200;
+  }
+  
+  /* Loading states */
+  .loading {
+    @apply animate-pulse;
+  }
+  
+  .skeleton {
+    @apply bg-muted animate-pulse rounded;
+  }
+}
+
+/* Print styles for resume export */
+@media print {
+  body {
+    @apply text-black bg-white;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break {
+    page-break-before: always;
+  }
+  
+  .resume-card {
+    @apply shadow-none border-0;
   }
 }
